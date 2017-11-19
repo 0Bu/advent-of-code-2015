@@ -6,12 +6,11 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         Path path = Paths.get(Main.class.getClassLoader().getResource("input").toURI());
-        byte[] bytes = Files.readAllBytes(path);
 
-        System.out.println("Day03/1 count of houses received at least one present: "
-                + new PartOne().getHousesCountReceivedAtLeastOnePresent(bytes));
-        System.out.println("Day03/2 count of houses received at least one present by Santa and Robo-Santa: "
-                + new PartTwo().getHousesCountReceivedAtLeastOnePresentBySantaAndRobo(bytes));
+        System.out.println("Day05/1 count of nice strings: " +
+                new PartOne().countNiceStrings(Files.lines(path)));
+        System.out.println("Day05/2 count of nice strings with by new rules: " +
+                new PartTwo().countNiceStrings(Files.lines(path)));
     }
 
 }
